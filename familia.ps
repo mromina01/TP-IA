@@ -8,6 +8,44 @@ familia(_, _, [_, _, _]).
 1true
 familia(_, _, [_, _, _, _]).
 false
+
 familia(persona(NombresPadre, _, _), persona(NombresMadre, _, _), [_, _, _])
 NombresMadre = [luisa, galvez, perez],
 NombresPadre = [jose, perez, ruiz]
+
+casado(X) :- familia(X, _, _).  ----> copio eso en el código
+casado(X).
+X = 
+persona(
+[tomas, garcia, perez],
+fecha(7,mayo,1960),
+trabajo(profesor,60)
+)
+X = 
+persona(
+[jose, perez, ruiz],
+fecha(6,marzo,1963),
+trabajo(pintor,120)
+)
+
+
+casada(X) :- familia(_, X, _).   ----> copio en el código
+casada(X).   ---->queries
+X = 
+persona(
+[ana, lopez, ruiz],
+fecha(10,marzo,1962),
+trabajo(medica,90)
+)
+X = 
+persona(
+[luisa, galvez, perez],
+fecha(12,mayo,1964),
+trabajo(medica,90)
+)
+
+
+casada(persona(Nombres,_ ,trabajo(_, _))).
+Nombres = [ana, lopez, ruiz]
+Nombres = [luisa, galvez, perez]
+
