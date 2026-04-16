@@ -1,0 +1,11 @@
+familia(_, _, []).
+false
+familia(_, _, [_]).
+false
+familia(_, _, [_, _]).
+1true
+familia(_, _, [_, _, _]).
+1true
+familia(_, _, [_, _, _, _]).
+false
+familia(persona(NombresPadre, _, _), persona(NombresMadre, _, _), [_, _, _])
