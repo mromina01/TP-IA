@@ -45,7 +45,21 @@ trabajo(medica,90)
 )
 
 
+
 casada(persona(Nombres,_ ,trabajo(_, _))).
 Nombres = [ana, lopez, ruiz]
 Nombres = [luisa, galvez, perez]
+
+
+pertenece(X, [X|_]).
+pertenece(X, [_|Cola]) :- pertenece(X, Cola).
+hijo(X) :- familia(_, _, ListaHijos), pertenece(X, ListaHijos). ----> copio esas 3 lineas en el código
+hijo(X). ----> consulta(queries)
+
+
+persona(X) :- familia(X, _, _).
+persona(X) :- familia(_, X, _).
+persona(X) :- hijo(X). ----> copio esas 3 lineas en el código
+persona(persona(NombresYApellidos, _, _)). ---->consulta
+
 
